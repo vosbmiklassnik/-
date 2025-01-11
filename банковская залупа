@@ -1,0 +1,41 @@
+class BankAccount:
+    def __init__(self, account_number, balance):
+        self.__account_number = account_number
+        self._balance = balance
+    def get_account_number(self):
+        return self.__account_number
+    def get_balance(self):
+        return self._balance
+    def deposit(self, amount1):
+        amount = input()
+        if amount <= 0:
+            print("Бан получишь")
+        else:
+            self._balance = self.balance + amount1
+    def withdraw(self, amount):
+        amount = input()
+        if self._balance == 0:
+            print("Нету денег")
+        else: 
+            self._balance = self.balance - amount2 
+    
+class PersonalAccount(BankAccount):
+    def __init__(self, account_number, balance, draft_limit):
+        super().__init__(self, account_number, balance)
+        self.draft_limit = draft_limit
+    def apply_interest(self):
+        self._balance = self.get_balance + (self._balance / 100 * 5)
+    def withdraw(self, amount):
+        if amount < draft_limit:
+            super().withdraw(amount)
+        else:
+            return "Денег нету"
+        
+class BusinessAccount(BankAccount):
+    def __init__(self, account_number, balance, overdraft_limit):
+        super().__init__(self, account_number, balance)
+        self.overdraft_limit = overdraft_limit
+    def apply_interest(self):
+        self._balance = self.get_balance + (self._balance / 100 * 3)
+    def withdraw(self, amount):
+        balance =             
